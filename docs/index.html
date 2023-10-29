@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/eac43127e7.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Cambiar por css/styles.min.css al finalizar el proyecto -->
+    <title>OSR CALM - Servicios auxiliares</title>
+  </head>
+  <body>
+    <div class="dropdown" id="dropdownActivate">
+      <nav class="dropdown__menu">
+        <ul class="dropdown__ul">
+          <li class="dropdown__item">
+            <a href="#quienesSomos">¿Quienes somos?</a>
+          </li>
+          <li class="dropdown__item">Servicios</li>
+          <li class="dropdown__item">Contacto</li>
+        </ul>
+      </nav>
+    </div>
+    <header class="header">
+      <div class="header__logo">
+        <img
+          src="/docs/assets/images/logocalmnegro.png"
+          alt="logo of OSR CALM"
+          class="header__img"
+        />
+      </div>
+      <div class="contactos">
+        <a href="tel:670349654"><i class="fa-solid fa-phone"></i></a>
+        <a href="mailto:info@osrcalm.com">
+          <i class="fa-solid fa-envelope"></i
+        ></a>
+      </div>
+      <div id="empty" class="empty"></div>
+      <div class="closeMenu" id="closeMenu">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="header__burger" id="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </header>
+    <main>
+      <div class="main-image">
+        <h1 id="cta-title" class="cta-title">
+          Tu tranquilidad,<br />nuestro
+          <span class="cta-title__goal">objetivo</span>
+        </h1>
+        <a href="#" class="cta-button">contáctanos</a>
+      </div>
+      <section class="aboutUs section-styles">
+        <h2 class="aboutUs__title title-style" id="quienesSomos">
+          ¿Quienes somos?
+        </h2>
+        <div class="groundborder"></div>
+        <article class="aboutUs__article">
+          <p class="aboutUs__paragraph paragraph-styles">
+            Somos una empresa con años de experiencia en el sector ubicada en
+            Barcelona. Nos dedicamos a todo tipo de servicios generales
+            enfocados a Comunidades de Vecinos, Mancomunidades de Propietarios,
+            Garajes y Aparcamientos tanto públicos como privados, Edificios
+            Singulares, etc.
+          </p>
+        </article>
+      </section>
+      <section class="servicesDescription section-styles">
+        <h2 class="servicesDescription__title title-style" id="comoLoHacemos">
+          ¿Cómo lo hacemos?
+        </h2>
+        <div class="groundborder"></div>
+        <div>
+          <p class="servicesDescription__paragraph paragraph-styles">
+            <span class="servicesDescription__paragraph--osr">OSR CALM</span>
+            elabora un plan operativo individualizado, para prestar un servicio
+            profesional adaptado a las necesidades de cada cliente. Combinamos
+            los medios técnicos y humanos adecuados, definiendo unas normas
+            básicas para la realización de cada servicio.
+          </p>
+        </div>
+      </section>
+      <section class="allServices section-styles" id="allServices">
+        <h2 class="allServices__title title-style" id="allServices__title">
+          Nuestros servicios
+        </h2>
+        <div class="groundborder"></div>
+        <p class="allServices__paragraph paragraph-styles">
+          Haga click en cada servicio para acceder a su descripción
+        </p>
+        <div class="allServices__servicesContainer section-styles">
+          <div class="allServices__items">
+            Conserjería
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="allServices__dropdown">
+            <p class="itemDescription">
+              Tareas de control y supervisión así como la apertura y cierre de
+              puertas de acceso, recepción y reparto de correo, pequeñas tareas
+              de mantenimiento, recogida de basuras, mantenimiento de limpieza y
+              atención al público.
+            </p>
+          </div>
+          <div class="allServices__items">
+            Recepcionista
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="allServices__items">
+            Servicios integrales de limpieza
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="allServices__items">
+            Controlador de accesos
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="allServices__items">
+            Auxiliares de servicios
+            <i class="fa-solid fa-plus"></i>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">O.S.R. CALM 2023</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
