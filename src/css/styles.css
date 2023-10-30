@@ -41,6 +41,11 @@ body {
   /* border: 1px solid greenyellow; */
 }
 
+.dropdown-links {
+  text-decoration: none;
+  color: var(--secundary-color);
+}
+
 .slideInDown {
   -webkit-animation-name: slideInDown;
   animation-name: slideInDown;
