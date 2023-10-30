@@ -12,6 +12,8 @@
   --closeMenuBurger-display: block; /* revelar burger */
   --empty-display: none;
   --itemDropdown-display: none;
+  --icon-plus: block;
+  --icon-minus: none;
 }
 
 * {
@@ -364,7 +366,7 @@ body {
 }
 
 .allServices__servicesContainer {
-  border: 1px solid greenyellow;
+  /* border: 1px solid greenyellow; */
 }
 
 .allServices__items {
@@ -384,6 +386,16 @@ body {
   padding: 1em;
   margin-bottom: 1em;
   border: 1px solid greenyellow;
+}
+
+.plus-solid {
+  display: var(--icon-plus);
+  fill: var(--text-color);
+}
+
+.minus-solid {
+  display: var(--icon-minus);
+  fill: var(--text-color);
 }
 
 .footer {

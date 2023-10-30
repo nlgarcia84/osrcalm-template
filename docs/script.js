@@ -10,10 +10,12 @@ const ctaTitleElement = document.getElementById('cta-title');
 
 const emptyElement = document.getElementById('empty');
 
-const plusElement = document.querySelector('.fa-plus');
+const plusElement = document.getElementById('plus-solid');
 
-const allServicesDropdownElement = document.querySelector(
-  '.allServices__dropdown'
+const minusElement = document.getElementById('minus-solid');
+
+const allServicesDropdownElement = document.getElementById(
+  'allServices__dropdown'
 );
 
 /* MODIFIERS BURGER MENU */
@@ -46,8 +48,18 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 /* MODIFIERS CARD SERVICES */
 
 const activateItemDropdown = () => {
-  allServicesDropdownElement.classList.add('slideInDown');
+  rootStyles.setProperty('--icon-plus', 'none');
+  rootStyles.setProperty('--icon-minus', 'block');
+
   rootStyles.setProperty('--itemDropdown-display', 'block');
 };
 
 plusElement.addEventListener('click', activateItemDropdown);
+
+const desactivateItemDropdown = () => {
+  rootStyles.setProperty('--icon-plus', 'block');
+  rootStyles.setProperty('--icon-minus', 'none');
+  rootStyles.setProperty('--itemDropdown-display', 'none');
+};
+
+minusElement.addEventListener('click', desactivateItemDropdown);
