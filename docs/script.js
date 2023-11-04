@@ -50,7 +50,6 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 const activateItemDropdown = () => {
   rootStyles.setProperty('--icon-plus', 'none');
   rootStyles.setProperty('--icon-minus', 'block');
-
   rootStyles.setProperty('--itemDropdown-display', 'block');
 };
 

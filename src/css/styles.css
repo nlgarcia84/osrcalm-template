@@ -14,6 +14,7 @@
   --itemDropdown-display: none;
   --icon-plus: block;
   --icon-minus: none;
+  --service-animation: upAnimation 0.4s ease 0s 1 normal none;
 }
 
 * {
@@ -384,13 +385,45 @@ body {
   color: var(--text-color);
 }
 
-.allServices__dropdown {
+.allServices__dropdownActivated {
   display: var(--itemDropdown-display);
   width: 100%;
   background-color: var(--secundary-color);
   padding: 1em;
   margin-bottom: 1em;
-  border: 1px solid greenyellow;
+  animation: downAnimation 0.5s ease 0s 1 normal none;
+}
+
+@keyframes downAnimation {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0%;
+  }
+
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+  }
+}
+
+.allServices__dropdownDesactivated {
+  display: none;
+  width: 100%;
+  background-color: var(--secundary-color);
+  padding: 1em;
+  margin-bottom: 1em;
+  animation: upAnimation 0.4s ease 0s 1 normal none;
+}
+
+@keyframes upAnimation {
+  0% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+  }
+  100% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0%;
+  }
 }
 
 .plus-solid {
