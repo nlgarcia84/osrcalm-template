@@ -14,9 +14,7 @@ const plusElement = document.getElementById('plus-solid');
 
 const minusElement = document.getElementById('minus-solid');
 
-const allServicesDropdownElement = document.getElementById(
-  'allServices__dropdown'
-);
+const allServiceHeaderElement = document.getElementById('allServices__header');
 
 /* MODIFIERS BURGER MENU */
 
@@ -47,18 +45,10 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 
 /* MODIFIERS CARD SERVICES */
 
-const activateItemDropdown = () => {
-  rootStyles.setProperty('--icon-plus', 'none');
-  rootStyles.setProperty('--icon-minus', 'block');
-  rootStyles.setProperty('--itemDropdown-display', 'block');
-};
+const activateItemDropdown = () => {};
 
 plusElement.addEventListener('click', activateItemDropdown);
 
-const desactivateItemDropdown = () => {
-  rootStyles.setProperty('--icon-plus', 'block');
-  rootStyles.setProperty('--icon-minus', 'none');
-  rootStyles.setProperty('--itemDropdown-display', 'none');
-};
+const desactivateItemDropdown = () => {};
 
 minusElement.addEventListener('click', desactivateItemDropdown);

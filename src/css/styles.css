@@ -6,7 +6,6 @@
   --icon-font-color: hsl(120, 33%, 53%);
   --dropDown-color: hsla(60, 4%, 11%, 0.726);
   --secundary-color: hsl(46, 100%, 50%);
-  --footer-color: hsl(0, 2%, 12%);
   --dropDown-display: none; /* ocultar menu */
   --closeMenuX-display: none; /* ocultar X */
   --closeMenuBurger-display: block; /* revelar burger */
@@ -14,7 +13,7 @@
   --itemDropdown-display: none;
   --icon-plus: block;
   --icon-minus: none;
-  --service-animation: upAnimation 0.4s ease 0s 1 normal none;
+  --footer-color: hsl(0, 2%, 12%);
 }
 
 * {
@@ -39,7 +38,6 @@ body {
   top: 60px;
   position: fixed;
   background-color: var(--dropDown-color);
-  /* border: 1px solid greenyellow; */
 }
 
 .dropdown-links {
@@ -373,57 +371,45 @@ body {
 
 .allServices__servicesContainer {
   /* border: 1px solid greenyellow; */
+  width: 90%;
+  background-color: white;
+  margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .allServices__items {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  padding: 0.7em 1em;
-  margin-bottom: 5px;
   background-color: var(--main-color);
   color: var(--text-color);
 }
 
-.allServices__dropdownActivated {
-  display: var(--itemDropdown-display);
+.allServices__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  height: 40px;
+  padding: 0.8em 1em;
+  background-color: var(--primary-color);
+}
+
+.allServices__title {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.allServices__body {
+  margin-bottom: 150px;
   background-color: var(--secundary-color);
-  padding: 1em;
-  margin-bottom: 1em;
-  animation: downAnimation 0.5s ease 0s 1 normal none;
+  padding: 0.8em 1em;
+  /* border: 1px solid greenyellow; */
 }
 
-@keyframes downAnimation {
-  0% {
-    transform: scaleY(0.4);
-    transform-origin: 100% 0%;
-  }
-
-  100% {
-    transform: scaleY(1);
-    transform-origin: 100% 0%;
-  }
-}
-
-.allServices__dropdownDesactivated {
-  display: none;
-  width: 100%;
-  background-color: var(--secundary-color);
-  padding: 1em;
-  margin-bottom: 1em;
-  animation: upAnimation 0.4s ease 0s 1 normal none;
-}
-
-@keyframes upAnimation {
-  0% {
-    transform: scaleY(1);
-    transform-origin: 100% 0%;
-  }
-  100% {
-    transform: scaleY(0.4);
-    transform-origin: 100% 0%;
-  }
+.itemDescription {
+  color: var(--primary-color);
+  /* display: var(--itemDropdown-display); */
 }
 
 .plus-solid {
