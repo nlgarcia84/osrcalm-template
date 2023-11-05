@@ -394,10 +394,20 @@ body {
   background-color: var(--primary-color);
 }
 
-.allServices__title {
+.allServices__header--active {
+  background-color: var(--secundary-color);
+  transition: background-color 0.5s ease;
+}
+
+.allServices__name {
   font-size: 1rem;
   margin: 0;
   color: var(--text-color);
+}
+
+.allServices__name--active {
+  color: var(--primary-color);
+  transition: color 0.5s ease;
 }
 
 .allServices__body {
@@ -417,9 +427,14 @@ body {
   fill: var(--text-color);
 }
 
+.plus-solid--clicked {
+  fill: var(--primary-color);
+  transition: fill 0.5s ease;
+}
+
 .minus-solid {
   display: var(--icon-minus);
-  fill: var(--text-color);
+  fill: var(--primary-color);
 }
 
 .footer {
