@@ -13,6 +13,7 @@
   --itemDropdown-display: none;
   --icon-plus: block;
   --icon-minus: none;
+  --allServicesBody-display: none;
   --footer-color: hsl(0, 2%, 12%);
 }
 
@@ -407,7 +408,7 @@ body {
 
 .allServices__name--active {
   color: var(--primary-color);
-  transition: color 0.5s ease;
+  transition: color 0.8s ease;
 }
 
 .allServices__body {
@@ -415,6 +416,23 @@ body {
   background-color: var(--secundary-color);
   padding: 0.8em 1em;
   /* border: 1px solid greenyellow; */
+}
+
+.allServices__body--active {
+  display: block;
+  animation: allServicesBodyActiveAnimation 2s ease;
+}
+
+@keyframes allServicesBodyActiveAnimation {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0%;
+  }
+
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+  }
 }
 
 .itemDescription {
@@ -425,11 +443,6 @@ body {
 .plus-solid {
   display: var(--icon-plus);
   fill: var(--text-color);
-}
-
-.plus-solid--clicked {
-  fill: var(--primary-color);
-  transition: fill 0.5s ease;
 }
 
 .minus-solid {

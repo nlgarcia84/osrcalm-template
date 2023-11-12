@@ -18,6 +18,8 @@ const allServiceHeaderElement = document.querySelector('.allServices__header');
 
 const allServicesNameElement = document.querySelector('.allServices__name');
 
+const allServicesBodyElement = document.querySelector('.allServices__body');
+
 /* MODIFIERS BURGER MENU */
 
 const activateDropdown = () => {
@@ -47,10 +49,11 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 
 /* MODIFIERS CARD SERVICES */
 
+
+
 const activateItemDropdown = () => {
   allServiceHeaderElement.classList.add('allServices__header--active');
   allServicesNameElement.classList.add('allServices__name--active');
-  plusElement.classList.add('plus-solid--clicked');
 };
 
 plusElement.addEventListener('click', activateItemDropdown);
