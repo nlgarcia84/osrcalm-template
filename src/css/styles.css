@@ -417,10 +417,11 @@ body {
 .allServices__body {
   background-color: var(--secundary-color);
   margin-bottom: 0;
+  padding: 0;
   top: 70px;
   height: 0;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   width: 100%;
 }
 
@@ -428,6 +429,7 @@ body {
   height: 130px;
   opacity: 1;
   margin-bottom: 2px;
+  padding: 1em;
 }
 
 .itemDescription {
