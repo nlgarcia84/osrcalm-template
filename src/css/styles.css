@@ -381,8 +381,8 @@ body {
 
 .allServices__items {
   width: 100%;
-  background-color: var(--main-color);
   color: var(--text-color);
+  background-color: var(--main-color);
 }
 
 .allServices__header {
@@ -392,12 +392,18 @@ body {
   width: 100%;
   height: 40px;
   padding: 0.8em 1em;
+  cursor: pointer;
   background-color: var(--primary-color);
+  /* animation: fadeIn 1s ease; */
+}
+
+.allServices__header-border {
+  border-bottom: 3px solid #302f2f;
 }
 
 .allServices__header--active {
   background-color: var(--secundary-color);
-  transition: background-color 0.5s ease;
+  /* transition: background-color 1s ease; */
 }
 
 .allServices__name {
@@ -408,31 +414,36 @@ body {
 
 .allServices__name--active {
   color: var(--primary-color);
-  transition: color 0.8s ease;
+  transition: color 0.2s ease;
 }
 
 .allServices__body {
-  margin-bottom: 150px;
+  display: var(--allServicesBody-display);
   background-color: var(--secundary-color);
-  padding: 0.8em 1em;
+  padding: 1em;
+  top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 0;
+  width: 100%;
+  -webkit-transition: max-height, 0.8s ease-in-out;
+  transition: max-height, 0.8s ease-in-out;
+  overflow-y: hidden;
+  overflow-x: hidden;
   /* border: 1px solid greenyellow; */
 }
 
-.allServices__body--active {
-  display: block;
-  animation: allServicesBodyActiveAnimation 2s ease;
+.display-body {
+  max-height: 300px;
 }
 
-@keyframes allServicesBodyActiveAnimation {
-  0% {
-    transform: scaleY(0.4);
-    transform-origin: 100% 0%;
-  }
-
-  100% {
-    transform: scaleY(1);
-    transform-origin: 100% 0%;
-  }
+.allServices__body-border {
+  border-bottom: 3px solid #302f2f;
 }
 
 .itemDescription {
@@ -440,14 +451,38 @@ body {
   /* display: var(--itemDropdown-display); */
 }
 
+.fadeInService {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .plus-solid {
   display: var(--icon-plus);
-  fill: var(--text-color);
+  width: 10px;
 }
 
 .minus-solid {
   display: var(--icon-minus);
-  fill: var(--primary-color);
 }
 
 .footer {

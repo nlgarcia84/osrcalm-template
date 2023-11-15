@@ -1,24 +1,20 @@
+// const { root } = require("postcss");
+
 const menuIconElement = document.getElementById('menu-icon');
-
 const closeMenuElement = document.getElementById('closeMenu');
-
 const dropdownActivateElement = document.getElementById('dropdownActivate');
-
 const rootStyles = document.documentElement.style;
-
 const ctaTitleElement = document.getElementById('cta-title');
-
 const emptyElement = document.getElementById('empty');
-
 const plusElement = document.getElementById('plus-solid');
-
-const minusElement = document.getElementById('minus-solid');
-
-const allServiceHeaderElement = document.querySelector('.allServices__header');
-
-const allServicesNameElement = document.querySelector('.allServices__name');
-
-const allServicesBodyElement = document.querySelector('.allServices__body');
+const allServicesContainerElement = document.getElementById(
+  'allServicesservicesContainer'
+);
+const allServiceHeaderElement1 = document.getElementById(
+  'allServices__header1'
+);
+const allServicesNameElement = document.getElementById('allServices__name');
+const allServicesBodyElement = document.getElementById('allServicesbody');
 
 /* MODIFIERS BURGER MENU */
 
@@ -48,16 +44,31 @@ const desactivateDropdown = () => {
 closeMenuElement.addEventListener('click', desactivateDropdown);
 
 /* MODIFIERS CARD SERVICES */
-
-
-
-const activateItemDropdown = () => {
-  allServiceHeaderElement.classList.add('allServices__header--active');
-  allServicesNameElement.classList.add('allServices__name--active');
+const displayBody = () => {
+  allServicesBodyElement.classList.toggle('display-body');
+};
+const activateBodys = () => {
+  rootStyles.setProperty('--allServicesBody-display', 'block');
+  displayBody();
+};
+const desactivateBodys = () => {
+  rootStyles.setProperty('--allServicesBody-display', 'none');
 };
 
-plusElement.addEventListener('click', activateItemDropdown);
+const activateItemHeader1 = () => {
+  allServiceHeaderElement1.classList.remove('allServices__header-border');
+  allServiceHeaderElement1.classList.add('allServices__header--active');
+  allServicesNameElement.classList.add('allServices__name--active');
+  if (plusElement.src.includes('plus-solidWhite.svg')) {
+    plusElement.src = 'assets/icons/minus-solid.svg';
+    activateBodys();
+  } else {
+    allServiceHeaderElement1.classList.remove('allServices__header-border');
+    allServiceHeaderElement1.classList.remove('allServices__header--active');
+    allServicesNameElement.classList.remove('allServices__name--active');
+    plusElement.src = 'assets/icons/plus-solidWhite.svg';
+    desactivateBodys();
+  }
+};
 
-const desactivateItemDropdown = () => {};
-
-minusElement.addEventListener('click', desactivateItemDropdown);
+allServiceHeaderElement1.addEventListener('click', activateItemHeader1);
