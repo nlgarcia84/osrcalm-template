@@ -52,7 +52,7 @@ const desactivateBodys = () => {
   allServicesBodyElement.classList.remove('allServices__body--animation');
 };
 
-const activateItemHeader1 = () => {
+const itemHeaderToggle = () => {
   allServiceHeaderElement1.classList.remove('allServices__header-border');
   allServiceHeaderElement1.classList.add('allServices__header--active');
   allServicesNameElement.classList.add('allServices__name--active');
@@ -68,4 +68,4 @@ const activateItemHeader1 = () => {
   }
 };
 
-allServiceHeaderElement1.addEventListener('click', activateItemHeader1);
+allServiceHeaderElement1.addEventListener('click', itemHeaderToggle);

@@ -13,7 +13,6 @@
   --itemDropdown-display: none;
   --icon-plus: block;
   --icon-minus: none;
-  --allServicesBody-display: none;
   --footer-color: hsl(0, 2%, 12%);
 }
 
@@ -424,12 +423,12 @@ body {
   top: 70px;
   height: 0;
   opacity: 0;
-  transition: all 0.7s ease;
+  transition: all 0.5s ease;
   width: 100%;
 }
 
 .allServices__body--animation {
-  height: 150px;
+  height: 130px;
   opacity: 1;
 }
 
