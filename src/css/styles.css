@@ -417,7 +417,6 @@ body {
 }
 
 .allServices__body {
-  /* display: var(--allServicesBody-display); */
   background-color: var(--secundary-color);
   padding: 1em;
   top: 70px;
@@ -438,7 +437,6 @@ body {
 
 .itemDescription {
   color: var(--primary-color);
-  /* display: var(--itemDropdown-display); */
 }
 
 .fadeInService {
