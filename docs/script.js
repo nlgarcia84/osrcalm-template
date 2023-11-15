@@ -46,11 +46,10 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 /* MODIFIERS CARD SERVICES */
 
 const activateBodys = () => {
-  rootStyles.setProperty('--allServicesBody-display', 'block');
-  displayBody();
+  allServicesBodyElement.classList.add('allServices__body--animation');
 };
 const desactivateBodys = () => {
-  rootStyles.setProperty('--allServicesBody-display', 'none');
+  allServicesBodyElement.classList.remove('allServices__body--animation');
 };
 
 const activateItemHeader1 = () => {

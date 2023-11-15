@@ -418,12 +418,19 @@ body {
 }
 
 .allServices__body {
-  display: var(--allServicesBody-display);
+  /* display: var(--allServicesBody-display); */
   background-color: var(--secundary-color);
   padding: 1em;
   top: 70px;
+  height: 0;
+  opacity: 0;
+  transition: all 0.7s ease;
+  width: 100%;
+}
 
-  /* border: 1px solid greenyellow; */
+.allServices__body--animation {
+  height: 150px;
+  opacity: 1;
 }
 
 .allServices__body-border {
