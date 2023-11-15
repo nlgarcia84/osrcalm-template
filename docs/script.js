@@ -13,6 +13,9 @@ const allServicesContainerElement = document.getElementById(
 const allServiceHeaderElement1 = document.getElementById(
   'allServices__header1'
 );
+const allServiceHeaderElement2 = document.getElementById(
+  'allServices__header2'
+);
 const allServicesNameElement = document.getElementById('allServices__name');
 const allServicesBodyElement = document.getElementById('allServicesbody');
 
@@ -45,6 +48,8 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 
 /* MODIFIERS CARD SERVICES */
 
+// SERVICIO DE CONSERJERIA
+
 const activateBodys = () => {
   allServicesBodyElement.classList.add('allServices__body--animation');
 };
@@ -52,7 +57,7 @@ const desactivateBodys = () => {
   allServicesBodyElement.classList.remove('allServices__body--animation');
 };
 
-const itemHeaderToggle = () => {
+const itemHeaderToggle1 = () => {
   allServiceHeaderElement1.classList.add('allServices__header--active');
   allServicesNameElement.classList.add('allServices__name--active');
   if (plusElement.src.includes('plus-solidWhite.svg')) {
@@ -64,6 +69,25 @@ const itemHeaderToggle = () => {
     plusElement.src = 'assets/icons/plus-solidWhite.svg';
     desactivateBodys();
   }
+  console.log('click');
 };
 
-allServiceHeaderElement1.addEventListener('click', itemHeaderToggle);
+allServiceHeaderElement1.addEventListener('click', itemHeaderToggle1);
+
+// SERVICIO DE RECEPCIONISTA
+const itemHeaderToggle2 = () => {
+  allServiceHeaderElement2.classList.add('allServices__header--active');
+  allServicesNameElement.classList.add('allServices__name--active');
+  if (plusElement.src.includes('plus-solidWhite.svg')) {
+    plusElement.src = 'assets/icons/minus-solid.svg';
+    activateBodys();
+  } else {
+    allServiceHeaderElement2.classList.remove('allServices__header--active');
+    allServicesNameElement.classList.remove('allServices__name--active');
+    plusElement.src = 'assets/icons/plus-solidWhite.svg';
+    desactivateBodys();
+  }
+  console.log('click');
+};
+
+allServiceHeaderElement2.addEventListener('click', (e) => console.dir(e));
