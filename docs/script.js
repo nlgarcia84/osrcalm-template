@@ -44,9 +44,7 @@ const desactivateDropdown = () => {
 closeMenuElement.addEventListener('click', desactivateDropdown);
 
 /* MODIFIERS CARD SERVICES */
-const displayBody = () => {
-  allServicesBodyElement.classList.toggle('display-body');
-};
+
 const activateBodys = () => {
   rootStyles.setProperty('--allServicesBody-display', 'block');
   displayBody();

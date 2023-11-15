@@ -422,24 +422,8 @@ body {
   background-color: var(--secundary-color);
   padding: 1em;
   top: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: 0;
-  width: 100%;
-  -webkit-transition: max-height, 0.8s ease-in-out;
-  transition: max-height, 0.8s ease-in-out;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  /* border: 1px solid greenyellow; */
-}
 
-.display-body {
-  max-height: 300px;
+  /* border: 1px solid greenyellow; */
 }
 
 .allServices__body-border {
