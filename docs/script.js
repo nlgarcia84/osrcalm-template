@@ -53,14 +53,12 @@ const desactivateBodys = () => {
 };
 
 const itemHeaderToggle = () => {
-  allServiceHeaderElement1.classList.remove('allServices__header-border');
   allServiceHeaderElement1.classList.add('allServices__header--active');
   allServicesNameElement.classList.add('allServices__name--active');
   if (plusElement.src.includes('plus-solidWhite.svg')) {
     plusElement.src = 'assets/icons/minus-solid.svg';
     activateBodys();
   } else {
-    allServiceHeaderElement1.classList.remove('allServices__header-border');
     allServiceHeaderElement1.classList.remove('allServices__header--active');
     allServicesNameElement.classList.remove('allServices__name--active');
     plusElement.src = 'assets/icons/plus-solidWhite.svg';

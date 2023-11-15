@@ -392,17 +392,15 @@ body {
   height: 40px;
   padding: 0.8em 1em;
   cursor: pointer;
-  background-color: var(--primary-color);
-  /* animation: fadeIn 1s ease; */
-}
-
-.allServices__header-border {
   border-bottom: 3px solid #302f2f;
+  background-color: var(--primary-color);
+  transition: all 0.5s ease;
+  /* animation: fadeIn 1s ease; */
 }
 
 .allServices__header--active {
   background-color: var(--secundary-color);
-  /* transition: background-color 1s ease; */
+  border-bottom: 0;
 }
 
 .allServices__name {
@@ -418,7 +416,7 @@ body {
 
 .allServices__body {
   background-color: var(--secundary-color);
-  padding: 1em;
+  margin-bottom: 0;
   top: 70px;
   height: 0;
   opacity: 0;
@@ -429,10 +427,7 @@ body {
 .allServices__body--animation {
   height: 130px;
   opacity: 1;
-}
-
-.allServices__body-border {
-  border-bottom: 3px solid #302f2f;
+  margin-bottom: 2px;
 }
 
 .itemDescription {
