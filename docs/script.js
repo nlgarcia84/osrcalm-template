@@ -50,44 +50,30 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 
 // SERVICIO DE CONSERJERIA
 
-const activateBodys = () => {
-  allServicesBodyElement.classList.add('allServices__body--animation');
-};
-const desactivateBodys = () => {
-  allServicesBodyElement.classList.remove('allServices__body--animation');
+const activateDesactivateBodyService = () => {
+  allServicesBodyElement.classList.toggle('allServices__body--animation');
 };
 
-const itemHeaderToggle1 = () => {
+const activateDesactivateHeaderService = () => {
   allServiceHeaderElement1.classList.add('allServices__header--active');
   allServicesNameElement.classList.add('allServices__name--active');
   if (plusElement.src.includes('plus-solidWhite.svg')) {
     plusElement.src = 'assets/icons/minus-solid.svg';
-    activateBodys();
+    activateDesactivateBodyService();
   } else {
     allServiceHeaderElement1.classList.remove('allServices__header--active');
     allServicesNameElement.classList.remove('allServices__name--active');
     plusElement.src = 'assets/icons/plus-solidWhite.svg';
-    desactivateBodys();
+    activateDesactivateBodyService();
   }
   console.log('click');
 };
 
-allServiceHeaderElement1.addEventListener('click', itemHeaderToggle1);
+allServiceHeaderElement1.addEventListener(
+  'click',
+  activateDesactivateHeaderService
+);
 
-// SERVICIO DE RECEPCIONISTA
-const itemHeaderToggle2 = () => {
-  allServiceHeaderElement2.classList.add('allServices__header--active');
-  allServicesNameElement.classList.add('allServices__name--active');
-  if (plusElement.src.includes('plus-solidWhite.svg')) {
-    plusElement.src = 'assets/icons/minus-solid.svg';
-    activateBodys();
-  } else {
-    allServiceHeaderElement2.classList.remove('allServices__header--active');
-    allServicesNameElement.classList.remove('allServices__name--active');
-    plusElement.src = 'assets/icons/plus-solidWhite.svg';
-    desactivateBodys();
-  }
-  console.log('click');
-};
-
-allServiceHeaderElement2.addEventListener('click', (e) => console.dir(e));
+allServiceHeaderElement2.addEventListener('click', (e) =>
+  console.dir(e.target)
+);
