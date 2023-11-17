@@ -16,8 +16,10 @@ const allServiceHeaderElement1 = document.getElementById(
 const allServiceHeaderElement2 = document.getElementById(
   'allServices__header2'
 );
-const allServicesNameElement = document.getElementById('allServices__name');
-const allServicesBodyElement = document.getElementById('allServicesbody');
+const allServicesNameElement1 = document.getElementById('allServices__name1');
+const allServicesNameElement2 = document.getElementById('allServices__name2');
+const allServicesBodyElement1 = document.getElementById('allServicesbody1');
+const allServicesBodyElement2 = document.getElementById('allServicesbody2');
 
 /* MODIFIERS BURGER MENU */
 
@@ -50,30 +52,46 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 
 // SERVICIO DE CONSERJERIA
 
-const activateDesactivateBodyService = () => {
-  allServicesBodyElement.classList.toggle('allServices__body--animation');
+const activateDesactivateBodyService1 = () => {
+  allServicesBodyElement1.classList.toggle('allServices__body--animation');
 };
 
-const activateDesactivateHeaderService = () => {
-  allServiceHeaderElement1.classList.add('allServices__header--active');
-  allServicesNameElement.classList.add('allServices__name--active');
+const activateDesactivateHeaderService1 = () => {
+  allServiceHeaderElement1.classList.toggle('allServices__header--active');
+  allServicesNameElement1.classList.toggle('allServices__name--active');
   if (plusElement.src.includes('plus-solidWhite.svg')) {
     plusElement.src = 'assets/icons/minus-solid.svg';
-    activateDesactivateBodyService();
+    activateDesactivateBodyService1();
   } else {
-    allServiceHeaderElement1.classList.remove('allServices__header--active');
-    allServicesNameElement.classList.remove('allServices__name--active');
     plusElement.src = 'assets/icons/plus-solidWhite.svg';
-    activateDesactivateBodyService();
+    activateDesactivateBodyService1();
   }
   console.log('click');
 };
 
 allServiceHeaderElement1.addEventListener(
   'click',
-  activateDesactivateHeaderService
+  activateDesactivateHeaderService1
 );
 
-allServiceHeaderElement2.addEventListener('click', (e) =>
-  console.dir(e.target)
+const activateDesactivateBodyService2 = () => {
+  allServicesBodyElement2.classList.toggle('allServices__body--animation');
+};
+
+const activateDesactivateHeaderService2 = () => {
+  allServiceHeaderElement2.classList.toggle('allServices__header--active');
+  allServicesNameElement2.classList.toggle('allServices__name--active');
+  if (plusElement.src.includes('plus-solidWhite.svg')) {
+    plusElement.src = 'assets/icons/minus-solid.svg';
+    activateDesactivateBodyService2();
+  } else {
+    plusElement.src = 'assets/icons/plus-solidWhite.svg';
+    activateDesactivateBodyService2();
+  }
+  console.log('click');
+};
+
+allServiceHeaderElement2.addEventListener(
+  'click',
+  activateDesactivateHeaderService2
 );
