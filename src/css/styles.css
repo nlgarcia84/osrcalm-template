@@ -13,6 +13,7 @@
   --itemDropdown-display: none;
   --icon-plus: block;
   --icon-minus: none;
+  --body-backgroundColor: hsl(0, 0%, 75%);
   --footer-color: hsl(0, 2%, 12%);
 }
 
@@ -400,7 +401,7 @@ body {
 }
 
 .allServices__header--active {
-  background-color: var(--secundary-color);
+  background-color: var(--body-backgroundColor);
   border-radius: 12px 12px 0 0;
   border-bottom: none;
 }
@@ -417,7 +418,7 @@ body {
 }
 
 .allServices__body {
-  background-color: var(--secundary-color);
+  background-color: var(--body-backgroundColor);
   margin-bottom: 0;
   padding: 0;
   top: 70px;
