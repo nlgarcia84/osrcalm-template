@@ -18,10 +18,26 @@ const allServiceHeaderElement1 = document.getElementById(
 const allServiceHeaderElement2 = document.getElementById(
   'allServices__header2'
 );
+const allServiceHeaderElement3 = document.getElementById(
+  'allServices__header3'
+);
+const allServiceHeaderElement4 = document.getElementById(
+  'allServices__header4'
+);
+const allServiceHeaderElement5 = document.getElementById(
+  'allServices__header5'
+);
 const allServicesNameElement1 = document.getElementById('allServices__name1');
 const allServicesNameElement2 = document.getElementById('allServices__name2');
+const allServicesNameElement3 = document.getElementById('allServices__name3');
+const allServicesNameElement4 = document.getElementById('allServices__name4');
+const allServicesNameElement5 = document.getElementById('allServices__name5');
+
 const allServicesBodyElement1 = document.getElementById('allServicesbody1');
 const allServicesBodyElement2 = document.getElementById('allServicesbody2');
+const allServicesBodyElement3 = document.getElementById('allServicesbody3');
+const allServicesBodyElement4 = document.getElementById('allServicesbody4');
+const allServicesBodyElement5 = document.getElementById('allServicesbody5');
 
 // BURGER MENU
 
@@ -126,6 +142,39 @@ allServiceHeaderElement2.addEventListener('click', () => {
     allServiceHeaderElement2,
     allServicesBodyElement2,
     allServicesNameElement2
+  );
+  togglePlusIcon(plusElement);
+  console.log('click');
+});
+
+// Manejar eventos para el servicio 3
+allServiceHeaderElement3.addEventListener('click', () => {
+  toggleService(
+    allServiceHeaderElement3,
+    allServicesBodyElement3,
+    allServicesNameElement3
+  );
+  togglePlusIcon(plusElement);
+  console.log('click');
+});
+
+// Manejar eventos para el servicio 4
+allServiceHeaderElement4.addEventListener('click', () => {
+  toggleService(
+    allServiceHeaderElement4,
+    allServicesBodyElement4,
+    allServicesNameElement4
+  );
+  togglePlusIcon(plusElement);
+  console.log('click');
+});
+
+// Manejar eventos para el servicio 5
+allServiceHeaderElement5.addEventListener('click', () => {
+  toggleService(
+    allServiceHeaderElement5,
+    allServicesBodyElement5,
+    allServicesNameElement5
   );
   togglePlusIcon(plusElement);
   console.log('click');
