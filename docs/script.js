@@ -8,7 +8,12 @@ const dropdownActivateElement = document.getElementById('dropdownActivate');
 const rootStyles = document.documentElement.style;
 const ctaTitleElement = document.getElementById('cta-title');
 const emptyElement = document.getElementById('empty');
-const plusElement = document.getElementById('plus-solid');
+const plusElement1 = document.getElementById('plus-solid-1');
+const plusElement2 = document.getElementById('plus-solid-2');
+const plusElement3 = document.getElementById('plus-solid-3');
+const plusElement4 = document.getElementById('plus-solid-4');
+const plusElement5 = document.getElementById('plus-solid-5');
+
 const allServicesContainerElement = document.getElementById(
   'allServicesservicesContainer'
 );
@@ -132,7 +137,7 @@ allServiceHeaderElement1.addEventListener('click', () => {
     allServicesBodyElement1,
     allServicesNameElement1
   );
-  togglePlusIcon(plusElement);
+  togglePlusIcon(plusElement1);
   console.log('click');
 });
 
@@ -143,7 +148,7 @@ allServiceHeaderElement2.addEventListener('click', () => {
     allServicesBodyElement2,
     allServicesNameElement2
   );
-  togglePlusIcon(plusElement);
+  togglePlusIcon(plusElement2);
   console.log('click');
 });
 
@@ -154,7 +159,7 @@ allServiceHeaderElement3.addEventListener('click', () => {
     allServicesBodyElement3,
     allServicesNameElement3
   );
-  togglePlusIcon(plusElement);
+  togglePlusIcon(plusElement3);
   console.log('click');
 });
 
@@ -165,7 +170,7 @@ allServiceHeaderElement4.addEventListener('click', () => {
     allServicesBodyElement4,
     allServicesNameElement4
   );
-  togglePlusIcon(plusElement);
+  togglePlusIcon(plusElement4);
   console.log('click');
 });
 
@@ -176,6 +181,6 @@ allServiceHeaderElement5.addEventListener('click', () => {
     allServicesBodyElement5,
     allServicesNameElement5
   );
-  togglePlusIcon(plusElement);
+  togglePlusIcon(plusElement5);
   console.log('click');
 });
