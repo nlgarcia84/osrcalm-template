@@ -52,46 +52,81 @@ closeMenuElement.addEventListener('click', desactivateDropdown);
 
 // SERVICES
 
-const activateDesactivateBodyService1 = () => {
-  allServicesBodyElement1.classList.toggle('allServices__body--animation');
+// const activateDesactivateBodyService1 = () => {
+//   allServicesBodyElement1.classList.toggle('allServices__body--animation');
+// };
+
+// const activateDesactivateHeaderService1 = () => {
+//   allServiceHeaderElement1.classList.toggle('allServices__header--active');
+//   allServicesNameElement1.classList.toggle('allServices__name--active');
+//   if (plusElement.src.includes('plus-solidWhite.svg')) {
+//     plusElement.src = 'assets/icons/minus-solid.svg';
+//     activateDesactivateBodyService1();
+//   } else {
+//     plusElement.src = 'assets/icons/plus-solidWhite.svg';
+//     activateDesactivateBodyService1();
+//   }
+//   console.log('click');
+// };
+
+// allServiceHeaderElement1.addEventListener(
+//   'click',
+//   activateDesactivateHeaderService1
+// );
+
+// const activateDesactivateBodyService2 = () => {
+//   allServicesBodyElement2.classList.toggle('allServices__body--animation');
+// };
+
+// const activateDesactivateHeaderService2 = () => {
+//   allServiceHeaderElement2.classList.toggle('allServices__header--active');
+//   allServicesNameElement2.classList.toggle('allServices__name--active');
+//   if (plusElement.src.includes('plus-solidWhite.svg')) {
+//     plusElement.src = 'assets/icons/minus-solid.svg';
+//     activateDesactivateBodyService2();
+//   } else {
+//     plusElement.src = 'assets/icons/plus-solidWhite.svg';
+//     activateDesactivateBodyService2();
+//   }
+//   console.log('click');
+// };
+
+// allServiceHeaderElement2.addEventListener(
+//   'click',
+//   activateDesactivateHeaderService2
+// );
+// Función reutilizable para activar/desactivar el cuerpo y encabezado del servicio
+const toggleService = (headerElement, bodyElement, nameElement) => {
+  headerElement.classList.toggle('allServices__header--active');
+  nameElement.classList.toggle('allServices__name--active');
+  bodyElement.classList.toggle('allServices__body--animation');
 };
 
-const activateDesactivateHeaderService1 = () => {
-  allServiceHeaderElement1.classList.toggle('allServices__header--active');
-  allServicesNameElement1.classList.toggle('allServices__name--active');
-  if (plusElement.src.includes('plus-solidWhite.svg')) {
-    plusElement.src = 'assets/icons/minus-solid.svg';
-    activateDesactivateBodyService1();
-  } else {
-    plusElement.src = 'assets/icons/plus-solidWhite.svg';
-    activateDesactivateBodyService1();
-  }
+// Función para cambiar la fuente del icono plus/minus
+const togglePlusIcon = (plusElement) => {
+  plusElement.src = plusElement.src.includes('plus-solidWhite.svg')
+    ? 'assets/icons/minus-solid.svg'
+    : 'assets/icons/plus-solidWhite.svg';
+};
+
+// Manejar eventos para el servicio 1
+allServiceHeaderElement1.addEventListener('click', () => {
+  toggleService(
+    allServiceHeaderElement1,
+    allServicesBodyElement1,
+    allServicesNameElement1
+  );
+  togglePlusIcon(plusElement);
   console.log('click');
-};
+});
 
-allServiceHeaderElement1.addEventListener(
-  'click',
-  activateDesactivateHeaderService1
-);
-
-const activateDesactivateBodyService2 = () => {
-  allServicesBodyElement2.classList.toggle('allServices__body--animation');
-};
-
-const activateDesactivateHeaderService2 = () => {
-  allServiceHeaderElement2.classList.toggle('allServices__header--active');
-  allServicesNameElement2.classList.toggle('allServices__name--active');
-  if (plusElement.src.includes('plus-solidWhite.svg')) {
-    plusElement.src = 'assets/icons/minus-solid.svg';
-    activateDesactivateBodyService2();
-  } else {
-    plusElement.src = 'assets/icons/plus-solidWhite.svg';
-    activateDesactivateBodyService2();
-  }
+// Manejar eventos para el servicio 2
+allServiceHeaderElement2.addEventListener('click', () => {
+  toggleService(
+    allServiceHeaderElement2,
+    allServicesBodyElement2,
+    allServicesNameElement2
+  );
+  togglePlusIcon(plusElement);
   console.log('click');
-};
-
-allServiceHeaderElement2.addEventListener(
-  'click',
-  activateDesactivateHeaderService2
-);
+});
