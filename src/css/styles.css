@@ -437,6 +437,7 @@ body {
 
 .itemDescription {
   color: var(--primary-color);
+  pointer-events: none;
 }
 
 .fadeInService {
