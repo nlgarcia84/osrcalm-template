@@ -1,5 +1,7 @@
 // const { root } = require("postcss");
 
+// CONSTS LIST
+
 const menuIconElement = document.getElementById('menu-icon');
 const closeMenuElement = document.getElementById('closeMenu');
 const dropdownActivateElement = document.getElementById('dropdownActivate');
@@ -21,7 +23,7 @@ const allServicesNameElement2 = document.getElementById('allServices__name2');
 const allServicesBodyElement1 = document.getElementById('allServicesbody1');
 const allServicesBodyElement2 = document.getElementById('allServicesbody2');
 
-/* MODIFIERS BURGER MENU */
+// BURGER MENU
 
 const activateDropdown = () => {
   dropdownActivateElement.classList.remove('slideOutUp');
@@ -48,9 +50,7 @@ const desactivateDropdown = () => {
 
 closeMenuElement.addEventListener('click', desactivateDropdown);
 
-/* MODIFIERS CARD SERVICES */
-
-// SERVICIO DE CONSERJERIA
+// SERVICES
 
 const activateDesactivateBodyService1 = () => {
   allServicesBodyElement1.classList.toggle('allServices__body--animation');
