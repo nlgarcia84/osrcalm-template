@@ -43,6 +43,7 @@ const allServicesBodyElement2 = document.getElementById('allServicesbody2');
 const allServicesBodyElement3 = document.getElementById('allServicesbody3');
 const allServicesBodyElement4 = document.getElementById('allServicesbody4');
 const allServicesBodyElement5 = document.getElementById('allServicesbody5');
+const itemDescriptionIdElement = document.getElementById('itemDescriptionId');
 
 // BURGER MENU
 
@@ -137,6 +138,7 @@ allServiceHeaderElement1.addEventListener('click', () => {
     allServicesBodyElement1,
     allServicesNameElement1
   );
+
   togglePlusIcon(plusElement1);
   console.log('click');
 });
@@ -183,4 +185,8 @@ allServiceHeaderElement5.addEventListener('click', () => {
   );
   togglePlusIcon(plusElement5);
   console.log('click');
+});
+
+document.addEventListener('click', (e) => {
+  console.dir(e);
 });

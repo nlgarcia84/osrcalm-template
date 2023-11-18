@@ -435,6 +435,10 @@ body {
   padding: 1em;
 }
 
+.testSpan {
+  display: none;
+}
+
 .itemDescription {
   color: var(--primary-color);
   pointer-events: none;
