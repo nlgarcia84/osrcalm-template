@@ -13,7 +13,7 @@
   --itemDropdown-display: none;
   --icon-plus: block;
   --icon-minus: none;
-  --body-backgroundColor: hsl(0, 1%, 64%);
+  --body-backgroundColor: hsl(46, 68%, 85%);
   --footer-color: hsl(0, 2%, 12%);
 }
 
@@ -306,6 +306,7 @@ body {
 
 .title-style {
   color: var(--text-color);
+  text-align: center;
 }
 
 .aboutUs {
@@ -407,7 +408,7 @@ body {
 }
 
 .allServices__name {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0;
   color: var(--text-color);
 }
@@ -429,14 +430,10 @@ body {
 }
 
 .allServices__body--animation {
-  height: 130px;
+  height: auto;
   opacity: 1;
   margin-bottom: 2px;
   padding: 1em;
-}
-
-.testSpan {
-  display: none;
 }
 
 .itemDescription {
@@ -478,10 +475,44 @@ body {
   display: var(--icon-minus);
 }
 
+.form__section {
+  padding: 5px;
+}
+
+.form__container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 70%;
+  color: var(--text-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.form-item {
+  margin-bottom: 15px;
+  border: none;
+}
+
+.input {
+  background-color: var(--text-color);
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  resize: none;
+}
+
 .footer {
   width: 100%;
   height: 70px;
-  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8em;
   letter-spacing: 2px;
   background-color: var(--footer-color);
   color: var(--text-color);
