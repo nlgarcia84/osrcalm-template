@@ -13,10 +13,10 @@ const plusElement2 = document.getElementById('plus-solid-2');
 const plusElement3 = document.getElementById('plus-solid-3');
 const plusElement4 = document.getElementById('plus-solid-4');
 const plusElement5 = document.getElementById('plus-solid-5');
-
 const allServicesContainerElement = document.getElementById(
   'allServicesservicesContainer'
 );
+const allServicesElement = document.getElementById('allServices');
 const allServiceHeaderElement1 = document.getElementById(
   'allServices__header1'
 );

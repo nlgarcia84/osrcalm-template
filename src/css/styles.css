@@ -482,9 +482,15 @@ body {
 .form__container {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
   margin-bottom: 20px;
   width: 70%;
   color: var(--text-color);
+  background-color: var(--primary-color);
+  padding: 20px;
+}
+
+.form__container--animation {
 }
 
 .form {
@@ -492,7 +498,6 @@ body {
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
 }
 
 .form-item {
@@ -506,6 +511,14 @@ body {
   padding: 5px;
   text-align: center;
   resize: none;
+}
+
+.form__submitButton {
+  width: 100px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
 }
 
 .footer {
