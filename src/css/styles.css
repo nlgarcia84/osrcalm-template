@@ -14,7 +14,7 @@
   --icon-plus: block;
   --icon-minus: none;
   --body-backgroundColor: hsl(0, 0%, 62%);
-  --display-form: flex;
+  --display-formContainer: block;
   --footer-color: hsl(0, 5%, 4%);
 }
 
@@ -494,12 +494,45 @@ body {
 .form__container--desactivated {
   background-color: transparent;
 }
+.form__container--off {
+  display: none;
+}
+
+/* form container zoom out animation  */
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+×
+/* form animation end */
 
 .form {
-  display: var(--display-form);
+  display: flex;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
+}
+
+.form__fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .form-item {

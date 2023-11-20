@@ -150,14 +150,13 @@ allServiceHeaderElement5.addEventListener('click', () => {
 formElement.addEventListener('submit', (e) => {
   console.log('enviado');
   e.preventDefault();
-  activatePreloader();
-  rootStyles.setProperty('--display-form', 'none');
+  formElement.classList.add('form__fadeOut');
   formContainer.classList.add('form__container--desactivated');
+  setTimeout(activatePreloader, 1000);
+  console.log(e.target.parentElement);
   setTimeout(() => {
-    rootStyles.setProperty('--display-form', 'block');
-    formContainer.classList.remove('form__container--desactivated');
-    successMsgElement.textContent =
-      'Gracias. En breve nos pondremos en contacto contigo.';
+    formContainer.classList.add('form__container--off');
+    successMsgElement.textContent = 'Mensaje enviado con éxito';
     activatePreloader();
   }, 7000);
 });
