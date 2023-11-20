@@ -37,13 +37,16 @@ const allServicesNameElement2 = document.getElementById('allServices__name2');
 const allServicesNameElement3 = document.getElementById('allServices__name3');
 const allServicesNameElement4 = document.getElementById('allServices__name4');
 const allServicesNameElement5 = document.getElementById('allServices__name5');
-
 const allServicesBodyElement1 = document.getElementById('allServicesbody1');
 const allServicesBodyElement2 = document.getElementById('allServicesbody2');
 const allServicesBodyElement3 = document.getElementById('allServicesbody3');
 const allServicesBodyElement4 = document.getElementById('allServicesbody4');
 const allServicesBodyElement5 = document.getElementById('allServicesbody5');
 const itemDescriptionIdElement = document.getElementById('itemDescriptionId');
+const formContainer = document.getElementById('formContainer');
+const formElement = document.getElementById('form');
+const preloaderElement = document.getElementById('preloader');
+const successMsgElement = document.getElementById('successMsg');
 
 // BURGER MENU
 
@@ -141,3 +144,26 @@ allServiceHeaderElement5.addEventListener('click', () => {
   togglePlusIcon(plusElement5);
   console.log('click');
 });
+
+// Manejador del boton submit del formulario
+
+formElement.addEventListener('submit', (e) => {
+  console.log('enviado');
+  e.preventDefault();
+  activatePreloader();
+  rootStyles.setProperty('--display-form', 'none');
+  formContainer.classList.add('form__container--desactivated');
+  setTimeout(() => {
+    rootStyles.setProperty('--display-form', 'block');
+    formContainer.classList.remove('form__container--desactivated');
+    successMsgElement.textContent =
+      'Gracias. En breve nos pondremos en contacto contigo.';
+    activatePreloader();
+  }, 7000);
+});
+
+// Manejador del preloader
+const activatePreloader = () => {
+  preloaderElement.classList.toggle('window8--activated');
+  console.log('cargando');
+};
