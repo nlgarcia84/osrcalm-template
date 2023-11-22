@@ -50,6 +50,7 @@ const successMsgElement = document.getElementById('successMsg');
 const inputNameElement = document.querySelectorAll('.form-item');
 const check1Element = document.getElementById('check1');
 const check2Element = document.getElementById('check2');
+const checkboxesElement = document.querySelector('.checkbox');
 const submitButtonElement = document.querySelector('.form__submitButton');
 
 // BURGER MENU
@@ -159,7 +160,6 @@ formElement.addEventListener('submit', (e) => {
     submitButtonElement.setAttribute('disabled');
   } else {
     submitButtonElement.removeAttribute('disabled');
-    submitButtonElement.classList.add('form__submitButton--activated');
   }
 
   // Desvanecimiento del contenedor formulario
@@ -172,9 +172,9 @@ formElement.addEventListener('submit', (e) => {
     formContainer.classList.remove('form__container--desactivated');
     successMsgElement.textContent = 'Mensaje enviado con éxito';
     // Reseteo de los checkbox y el color del submit button
+    submitButtonElement.classList.remove('form__submitButton--activated');
     check1Element.checked = false;
     check2Element.checked = false;
-    submitButtonElement.classList.remove('form__submitButton--activated');
 
     activatePreloader();
   }, 7000);
@@ -198,4 +198,12 @@ document.addEventListener('click', (e) => {
   inputActive(e, 0);
   inputActive(e, 1);
   inputActive(e, 2);
+});
+
+document.addEventListener('click', () => {
+  if (check1Element.checked && check2Element.checked) {
+    submitButtonElement.classList.add('form__submitButton--activated');
+  } else {
+    submitButtonElement.classList.remove('form__submitButton--activated');
+  }
 });
