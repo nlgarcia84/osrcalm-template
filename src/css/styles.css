@@ -492,13 +492,11 @@ body {
   width: 100%;
   background-color: var(--primary-color);
   padding: 1em 0;
+  transition: opacity 1s ease;
 }
 
 .form__container--desactivated {
-  background-color: transparent;
-}
-.form__container--off {
-  display: none;
+  opacity: 0;
 }
 
 .formFooter {
@@ -602,11 +600,16 @@ body {
   margin-right: auto;
   margin-left: auto;
   padding: 0.5em 1.5em;
-  border: 1px solid var(--secundary-color);
+  border: 1px solid hsl(0, 77%, 61%);
   border-radius: 0.2em;
   background-color: transparent;
-  color: var(--secundary-color);
+  color: hsl(0, 77%, 61%);
   margin-bottom: 20px;
+}
+
+.form__submitButton--activated {
+  border: 1px solid var(--secundary-color);
+  color: var(--secundary-color);
 }
 
 .span-text {
@@ -970,6 +973,10 @@ body {
 }
 
 /* end preloader here */
+
+/* preloader text init */
+
+/* en preloader text */
 
 .footer {
   width: 100%;

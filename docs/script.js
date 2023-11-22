@@ -48,6 +48,9 @@ const formElement = document.getElementById('form');
 const preloaderElement = document.getElementById('preloader');
 const successMsgElement = document.getElementById('successMsg');
 const inputNameElement = document.querySelectorAll('.form-item');
+const check1Element = document.getElementById('check1');
+const check2Element = document.getElementById('check2');
+const submitButtonElement = document.querySelector('.form__submitButton');
 
 // BURGER MENU
 
@@ -151,14 +154,28 @@ allServiceHeaderElement5.addEventListener('click', () => {
 formElement.addEventListener('submit', (e) => {
   console.log('enviado');
   e.preventDefault();
-  formElement.classList.add('form__fadeOut');
-  formContainer.classList.add('form__container--desactivated');
+  // Se comprueba si están los checkbox marcados
+  if (!check1Element.checked || !check2Element.checked) {
+    submitButtonElement.setAttribute('disabled');
+  } else {
+    submitButtonElement.removeAttribute('disabled');
+    submitButtonElement.classList.add('form__submitButton--activated');
+  }
 
+  // Desvanecimiento del contenedor formulario
+  formContainer.classList.add('form__container--desactivated');
+  // Activación del preloader durante 1000ms
   setTimeout(activatePreloader, 1000);
   console.log(e.target.parentElement);
+  // Termina el preloader y aparece el mensaje
   setTimeout(() => {
-    // formContainer.classList.add('form__container--off');
+    formContainer.classList.remove('form__container--desactivated');
     successMsgElement.textContent = 'Mensaje enviado con éxito';
+    // Reseteo de los checkbox y el color del submit button
+    check1Element.checked = false;
+    check2Element.checked = false;
+    submitButtonElement.classList.remove('form__submitButton--activated');
+
     activatePreloader();
   }, 7000);
 });
@@ -169,14 +186,15 @@ const activatePreloader = () => {
   console.log('cargando');
 };
 
-
-
 const inputActive = (e, num) => {
-  e.target === inputNameElement[`${num}`] ? inputNameElement[`${num}`].classList.add('inputBorderBottom') : inputNameElement[`${num}`].classList.remove('inputBorderBottom');
+  e.target === inputNameElement[`${num}`]
+    ? inputNameElement[`${num}`].classList.add('inputBorderBottom')
+    : inputNameElement[`${num}`].classList.remove('inputBorderBottom');
   // e.target === inputNameElement[`${num}`] ? inputNameElement[`${num}`].classList.add('inputBorderBottom') : inputNameElement[`${num}`].classList.remove('inputBorderBottom');
-}
+};
 
-document.addEventListener('click', e => {
+document.addEventListener('click', (e) => {
+  console.log(e);
   inputActive(e, 0);
   inputActive(e, 1);
   inputActive(e, 2);
