@@ -1,11 +1,11 @@
 :root {
-  --primary-color: hsl(0, 0%, 0%);
+  --primary-color: hsl(0, 6%, 10%);
   --main-color: hsl(0, 0%, 7%);
   --text-color: hsla(0, 0%, 100%, 0.876);
   --paragraph-color: hsl(0, 2%, 84%);
   --icon-font-color: hsl(120, 33%, 53%);
   --dropDown-color: hsla(60, 4%, 11%, 0.726);
-  --secundary-color: hsl(46, 100%, 50%);
+  --secundary-color: hsl(45, 86%, 44%);
   --dropDown-display: none; /* ocultar menu */
   --closeMenuX-display: none; /* ocultar X */
   --closeMenuBurger-display: block; /* revelar burger */
@@ -320,6 +320,7 @@ body {
   height: 2px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
   background-color: var(--secundary-color);
   -webkit-animation-name: slideInLeft;
   animation-name: slideInLeft;
@@ -480,15 +481,17 @@ body {
   padding: 5px;
 }
 
+.successMsg {
+  margin-bottom: 10px;
+}
+
 .form__container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
+  /* margin-left: auto;
+  margin-right: auto; */
   margin-bottom: 20px;
-  width: 80%;
-  color: var(--text-color);
+  width: 100%;
   background-color: var(--primary-color);
-  padding: 20px;
+  padding: 1em 0;
 }
 
 .form__container--desactivated {
@@ -519,12 +522,15 @@ body {
 ×
 /* form animation end */
 
-.form {
+/* .form {
+  width: 100%;
+  height: 300px;
   display: flex;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-}
+  background-color: #fff;
+} */
 
 .form__fadeOut {
   -webkit-animation-name: fadeOut;
@@ -538,23 +544,72 @@ body {
 .form-item {
   margin-bottom: 15px;
   border: none;
+  outline: none;
+}
+
+.textAreaa {
+  border: 10px solid transparent;
+  margin: 10px;
+  background-color: rgb(30, 30, 30);
+  outline: 1px solid rgb(43, 42, 44);
+  color: var(--text-color);
+  text-align: center;
+  resize: none;
+  padding: 0.1em 0 0.6em 0;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
 }
 
 .input {
-  background-color: var(--text-color);
-  width: 100%;
-  padding: 5px;
+  width: 90%;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(43, 42, 44);
+  padding: 1em 0 0.6em 0;
   text-align: center;
-  resize: none;
+  color: var(--text-color);
+}
+.inputBorderBottom {
+  width: 90%;
+  border-bottom: 1px solid rgb(85, 85, 85);
+}
+
+.form__buttonCheckBox{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__checkboxSpan {
+  display: flex;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.form__innerContent {
+  width: 100%;
+  align-items: center;
+  background-color: #fff;
 }
 
 .form__submitButton {
   width: 100px;
-  padding: 5px;
-  margin-left: auto;
   margin-right: auto;
-  border: none;
+  margin-left: auto;
+  padding: 0.5em 1.5em;
+  border: 1px solid var(--secundary-color);
+  border-radius: 0.2em;
+  background-color: transparent;
+  color: var(--secundary-color);
+  margin-bottom: 20px;
 }
+
+.span-text {
+  margin-left: 10px;
+  font-size: .8rem;
+}
+
 
 .successMsg {
   color: var(--text-color);

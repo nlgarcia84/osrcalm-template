@@ -47,6 +47,7 @@ const formContainer = document.getElementById('formContainer');
 const formElement = document.getElementById('form');
 const preloaderElement = document.getElementById('preloader');
 const successMsgElement = document.getElementById('successMsg');
+const inputNameElement = document.querySelectorAll('.form-item');
 
 // BURGER MENU
 
@@ -152,10 +153,11 @@ formElement.addEventListener('submit', (e) => {
   e.preventDefault();
   formElement.classList.add('form__fadeOut');
   formContainer.classList.add('form__container--desactivated');
+
   setTimeout(activatePreloader, 1000);
   console.log(e.target.parentElement);
   setTimeout(() => {
-    formContainer.classList.add('form__container--off');
+    // formContainer.classList.add('form__container--off');
     successMsgElement.textContent = 'Mensaje enviado con éxito';
     activatePreloader();
   }, 7000);
@@ -166,3 +168,16 @@ const activatePreloader = () => {
   preloaderElement.classList.toggle('window8--activated');
   console.log('cargando');
 };
+
+
+
+const inputActive = (e, num) => {
+  e.target === inputNameElement[`${num}`] ? inputNameElement[`${num}`].classList.add('inputBorderBottom') : inputNameElement[`${num}`].classList.remove('inputBorderBottom');
+  // e.target === inputNameElement[`${num}`] ? inputNameElement[`${num}`].classList.add('inputBorderBottom') : inputNameElement[`${num}`].classList.remove('inputBorderBottom');
+}
+
+document.addEventListener('click', e => {
+  inputActive(e, 0);
+  inputActive(e, 1);
+  inputActive(e, 2);
+});
