@@ -47,6 +47,9 @@ const formContainer = document.getElementById('formContainer');
 const formElement = document.getElementById('form');
 const preloaderElement = document.getElementById('preloader');
 const successMsgElement = document.getElementById('successMsg');
+const nameElement = document.getElementById('name');
+const emailElement = document.getElementById('email');
+const messageElement = document.getElementById('message');
 const inputNameElement = document.querySelectorAll('.form-item');
 const check1Element = document.getElementById('check1');
 const check2Element = document.getElementById('check2');
@@ -150,41 +153,6 @@ allServiceHeaderElement5.addEventListener('click', () => {
   console.log('click');
 });
 
-// Manejador del boton submit del formulario
-
-document.addEventListener('submit', (e) => {
-  e.preventDefault();
-  // Se comprueba si están los checkbox marcados
-  if (!check1Element.checked || !check2Element.checked) {
-    submitButtonElement.setAttribute('disabled');
-  } else {
-    submitButtonElement.removeAttribute('disabled');
-  }
-  for (let input of formElement) {
-    if (!input.value) {
-      submitButtonElement.setAttribute('disabled');
-    } else {
-      submitButtonElement.removeAttribute('disabled');
-    }
-  }
-
-  // Desvanecimiento del contenedor formulario
-  formContainer.classList.add('form__container--desactivated');
-  // Activación del preloader durante 1000ms
-  setTimeout(activatePreloader, 1000);
-  // Termina el preloader y aparece el mensaje
-  setTimeout(() => {
-    formContainer.classList.remove('form__container--desactivated');
-    successMsgElement.textContent = 'Mensaje enviado con éxito';
-    // Reseteo de los checkbox y el color del submit button
-    submitButtonElement.classList.remove('form__submitButton--activated');
-    check1Element.checked = false;
-    check2Element.checked = false;
-
-    activatePreloader();
-  }, 7000);
-});
-
 // Manejador del preloader
 const activatePreloader = () => {
   preloaderElement.classList.toggle('window8--activated');
@@ -205,9 +173,58 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('input', () => {
-  if (!check1Element.checked || !check2Element.checked) {
+  if (
+    !check1Element.checked ||
+    !check2Element.checked ||
+    !nameElement.value ||
+    !emailElement.value ||
+    !messageElement.value
+  ) {
     submitButtonElement.classList.remove('form__submitButton--activated');
   } else {
     submitButtonElement.classList.add('form__submitButton--activated');
   }
+});
+
+document.addEventListener('input', () => {
+  if (check1Element.checked && check2Element.checked2) {
+    submitButtonElement.removeAttribute('disabled');
+  }
+});
+
+// Manejador del boton submit del formulario
+
+formElement.addEventListener('submit', (e) => {
+  e.preventDefault();
+  // Se comprueba si están los checkbox marcados
+
+  if (
+    !nameElement.value ||
+    !emailElement.value ||
+    !messageElement.value ||
+    !check1Element.checked ||
+    !check2Element.checked
+  ) {
+    submitButtonElement.setAttribute('disabled');
+  } else {
+    submitButtonElement.removeAttribute('disabled');
+  }
+  // Desvanecimiento del contenedor formulario
+  formContainer.classList.add('form__container--desactivated');
+  // Activación del preloader durante 1000ms
+  setTimeout(activatePreloader, 1000);
+  // Termina el preloader y aparece el mensaje
+  setTimeout(() => {
+    formContainer.classList.remove('form__container--desactivated');
+    successMsgElement.textContent = 'Mensaje enviado con éxito';
+    // Reseteo de los checkbox y el color del submit button
+    submitButtonElement.classList.remove('form__submitButton--activated');
+    nameElement.value = '';
+    emailElement.value = '';
+    messageElement.value = '';
+    check1Element.checked = false;
+    check2Element.checked = false;
+
+    activatePreloader();
+  }, 7000);
 });
