@@ -15,6 +15,7 @@
   --icon-minus: none;
   --body-backgroundColor: hsl(0, 0%, 62%);
   --display-formContainer: block;
+  --submitButton-desactivated: hsl(0, 3%, 38%);
   --footer-color: hsl(0, 5%, 4%);
 }
 
@@ -600,10 +601,10 @@ body {
   margin-right: auto;
   margin-left: auto;
   padding: 0.5em 1.5em;
-  border: 1px solid hsl(0, 77%, 61%);
+  border: 1px solid var(--submitButton-desactivated);
   border-radius: 0.2em;
   background-color: transparent;
-  color: hsl(0, 77%, 61%);
+  color: var(--submitButton-desactivated);
   margin-bottom: 20px;
 }
 

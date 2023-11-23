@@ -152,8 +152,7 @@ allServiceHeaderElement5.addEventListener('click', () => {
 
 // Manejador del boton submit del formulario
 
-formElement.addEventListener('submit', (e) => {
-  console.log('enviado');
+document.addEventListener('submit', (e) => {
   e.preventDefault();
   // Se comprueba si están los checkbox marcados
   if (!check1Element.checked || !check2Element.checked) {
@@ -161,12 +160,18 @@ formElement.addEventListener('submit', (e) => {
   } else {
     submitButtonElement.removeAttribute('disabled');
   }
+  for (let input of formElement) {
+    if (!input.value) {
+      submitButtonElement.setAttribute('disabled');
+    } else {
+      submitButtonElement.removeAttribute('disabled');
+    }
+  }
 
   // Desvanecimiento del contenedor formulario
   formContainer.classList.add('form__container--desactivated');
   // Activación del preloader durante 1000ms
   setTimeout(activatePreloader, 1000);
-  console.log(e.target.parentElement);
   // Termina el preloader y aparece el mensaje
   setTimeout(() => {
     formContainer.classList.remove('form__container--desactivated');
@@ -194,16 +199,15 @@ const inputActive = (e, num) => {
 };
 
 document.addEventListener('click', (e) => {
-  console.log(e);
   inputActive(e, 0);
   inputActive(e, 1);
   inputActive(e, 2);
 });
 
-document.addEventListener('click', () => {
-  if (check1Element.checked && check2Element.checked) {
-    submitButtonElement.classList.add('form__submitButton--activated');
-  } else {
+document.addEventListener('input', () => {
+  if (!check1Element.checked || !check2Element.checked) {
     submitButtonElement.classList.remove('form__submitButton--activated');
+  } else {
+    submitButtonElement.classList.add('form__submitButton--activated');
   }
 });
