@@ -1,7 +1,9 @@
 // const { root } = require("postcss");
 
-// CONSTS LIST
+// const { root } = require('postcss');
 
+// CONSTS LIST
+const onTopButtonElement = document.getElementById('onTop');
 const menuIconElement = document.getElementById('menu-icon');
 const closeMenuElement = document.getElementById('closeMenu');
 const dropdownActivateElement = document.getElementById('dropdownActivate');
@@ -67,6 +69,9 @@ const activateDropdown = () => {
   rootStyles.setProperty('--empty-display', 'block');
   ctaTitleElement.classList.remove('fadeIn');
   ctaTitleElement.classList.add('fadeOut');
+  setTimeout(() => {
+    rootStyles.setProperty('--display-webtitle', 'none');
+  }, 1000);
 };
 
 menuIconElement.addEventListener('click', activateDropdown);
@@ -79,17 +84,81 @@ const desactivateDropdown = () => {
   rootStyles.setProperty('--empty-display', 'none');
   ctaTitleElement.classList.remove('fadeOut');
   ctaTitleElement.classList.add('fadeIn');
+  rootStyles.setProperty('--display-webtitle', 'block');
 };
 
 closeMenuElement.addEventListener('click', desactivateDropdown);
 
-// Función reutilizable para activar/desactivar el cuerpo y encabezado del servicio
-const toggleService = (headerElement, bodyElement, nameElement) => {
-  headerElement.classList.toggle('allServices__header--active');
-  nameElement.classList.toggle('allServices__name--active');
-  bodyElement.classList.toggle('allServices__body--animation');
+// Función para activar el onTopButton
+
+const activateOnTopButton = () => {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    rootStyles.setProperty('--display-onTopButton', 'block');
+  } else {
+    rootStyles.setProperty('--display-onTopButton', 'none');
+  }
 };
 
+window.addEventListener('scroll', activateOnTopButton);
+
+// Función para scrollear al top de la página con el onTopButton
+
+const moveOnTop = () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};
+
+onTopButtonElement.addEventListener('click', moveOnTop);
+
+// Función reutilizable para activar/desactivar el cuerpo y encabezado del servicio
+
+const toggleService = (headerElement, bodyElement, nameElement) => {
+  // Si el servicio individual esta activo al clickar se cierra
+  if (headerElement.classList.contains('allServices__header--active')) {
+    closeIndividualService(headerElement, bodyElement, nameElement);
+  } else {
+    // cuando hay uno activo se cierran los demás
+    closeAllServices();
+    headerElement.classList.toggle('allServices__header--active');
+    nameElement.classList.toggle('allServices__name--active');
+    bodyElement.classList.toggle('allServices__body--animation');
+  }
+};
+
+// Función para cerrar todos los servicios cuando hay uno activo
+const closeAllServices = () => {
+  closeIndividualService(
+    allServiceHeaderElement1,
+    allServicesBodyElement1,
+    allServicesNameElement1
+  );
+  closeIndividualService(
+    allServiceHeaderElement2,
+    allServicesBodyElement2,
+    allServicesNameElement2
+  );
+  closeIndividualService(
+    allServiceHeaderElement3,
+    allServicesBodyElement3,
+    allServicesNameElement3
+  );
+  closeIndividualService(
+    allServiceHeaderElement4,
+    allServicesBodyElement4,
+    allServicesNameElement4
+  );
+  closeIndividualService(
+    allServiceHeaderElement5,
+    allServicesBodyElement5,
+    allServicesNameElement5
+  );
+};
+
+const closeIndividualService = (headerElement, bodyElement, nameElement) => {
+  headerElement.classList.remove('allServices__header--active');
+  nameElement.classList.remove('allServices__name--active');
+  bodyElement.classList.remove('allServices__body--animation');
+};
 // Función para cambiar la fuente del icono plus/minus
 const togglePlusIcon = (plusElement) => {
   plusElement.src = plusElement.src.includes('plus-solidWhite.svg')
