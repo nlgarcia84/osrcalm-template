@@ -112,115 +112,79 @@ onTopButtonElement.addEventListener('click', moveOnTop);
 
 // Función reutilizable para activar/desactivar el cuerpo y encabezado del servicio
 
-const toggleService = (headerElement, bodyElement, nameElement) => {
-  // Si el servicio individual esta activo al clickar se cierra
-  if (headerElement.classList.contains('allServices__header--active')) {
-    closeIndividualService(headerElement, bodyElement, nameElement);
-  } else {
-    // cuando hay uno activo se cierran los demás
-    closeAllServices();
-    headerElement.classList.toggle('allServices__header--active');
-    nameElement.classList.toggle('allServices__name--active');
-    bodyElement.classList.toggle('allServices__body--animation');
+class ServiceHandler {
+  constructor(headerElement, bodyElement, nameElement, plusElement) {
+    this.headerElement = headerElement;
+    this.bodyElement = bodyElement;
+    this.nameElement = nameElement;
+    this.plusElement = plusElement;
+    this.isOpen = false; // Mantener el estado del servicio abierto/cerrado
+
+    this.initialize();
   }
-};
 
-// Función para cerrar todos los servicios cuando hay uno activo
-const closeAllServices = () => {
-  closeIndividualService(
-    allServiceHeaderElement1,
-    allServicesBodyElement1,
-    allServicesNameElement1
-  );
-  closeIndividualService(
-    allServiceHeaderElement2,
-    allServicesBodyElement2,
-    allServicesNameElement2
-  );
-  closeIndividualService(
-    allServiceHeaderElement3,
-    allServicesBodyElement3,
-    allServicesNameElement3
-  );
-  closeIndividualService(
-    allServiceHeaderElement4,
-    allServicesBodyElement4,
-    allServicesNameElement4
-  );
-  closeIndividualService(
-    allServiceHeaderElement5,
-    allServicesBodyElement5,
-    allServicesNameElement5
-  );
-};
+  initialize() {
+    this.headerElement.addEventListener('click', () => {
+      if (this.isOpen) {
+        this.closeService(); // Si está abierto, cerrar este servicio
+      } else {
+        this.closeAllServicesExceptCurrent(); // Cerrar todos los demás servicios abiertos
+        this.openService(); // Abrir este servicio
+      }
+    });
+  }
 
-const closeIndividualService = (headerElement, bodyElement, nameElement) => {
-  headerElement.classList.remove('allServices__header--active');
-  nameElement.classList.remove('allServices__name--active');
-  bodyElement.classList.remove('allServices__body--animation');
-};
-// Función para cambiar la fuente del icono plus/minus
-const togglePlusIcon = (plusElement) => {
-  plusElement.src = plusElement.src.includes('plus-solidWhite.svg')
-    ? 'assets/icons/minus-solid.svg'
-    : 'assets/icons/plus-solidWhite.svg';
-};
+  openService() {
+    this.isOpen = true;
+    this.headerElement.classList.add('allServices__header--active');
+    this.nameElement.classList.add('allServices__name--active');
+    this.bodyElement.classList.add('allServices__body--animation');
+    this.togglePlusIcon();
+    console.log('Servicio abierto');
+  }
 
-// Manejar eventos para el servicio 1
-allServiceHeaderElement1.addEventListener('click', () => {
-  toggleService(
-    allServiceHeaderElement1,
-    allServicesBodyElement1,
-    allServicesNameElement1
-  );
+  closeService() {
+    this.isOpen = false;
+    this.headerElement.classList.remove('allServices__header--active');
+    this.nameElement.classList.remove('allServices__name--active');
+    this.bodyElement.classList.remove('allServices__body--animation');
+    this.togglePlusIcon();
+    console.log('Servicio cerrado');
+  }
 
-  togglePlusIcon(plusElement1);
-  console.log('click');
-});
+  closeAllServicesExceptCurrent() {
+    // Cerrar todos los servicios abiertos excepto el actual
+    services.forEach((service) => {
+      if (service !== this && service.isOpen) {
+        service.closeService();
+      }
+    });
+  }
 
-// Manejar eventos para el servicio 2
-allServiceHeaderElement2.addEventListener('click', () => {
-  toggleService(
-    allServiceHeaderElement2,
-    allServicesBodyElement2,
-    allServicesNameElement2
-  );
-  togglePlusIcon(plusElement2);
-  console.log('click');
-});
+  togglePlusIcon() {
+    if (this.isOpen) {
+      this.plusElement.src = 'assets/icons/minus-solid.svg';
+    } else {
+      this.plusElement.src = 'assets/icons/plus-solidWhite.svg';
+    }
+  }
+}
 
-// Manejar eventos para el servicio 3
-allServiceHeaderElement3.addEventListener('click', () => {
-  toggleService(
-    allServiceHeaderElement3,
-    allServicesBodyElement3,
-    allServicesNameElement3
-  );
-  togglePlusIcon(plusElement3);
-  console.log('click');
-});
+// Crear instancias para cada servicio
+const services = [];
 
-// Manejar eventos para el servicio 4
-allServiceHeaderElement4.addEventListener('click', () => {
-  toggleService(
-    allServiceHeaderElement4,
-    allServicesBodyElement4,
-    allServicesNameElement4
-  );
-  togglePlusIcon(plusElement4);
-  console.log('click');
-});
+for (let i = 1; i <= 5; i++) {
+  const headerElement = document.getElementById(`allServices__header${i}`);
+  const bodyElement = document.getElementById(`allServicesbody${i}`);
+  const nameElement = document.getElementById(`allServices__name${i}`);
+  const plusElement = document.getElementById(`plus-solid-${i}`);
 
-// Manejar eventos para el servicio 5
-allServiceHeaderElement5.addEventListener('click', () => {
-  toggleService(
-    allServiceHeaderElement5,
-    allServicesBodyElement5,
-    allServicesNameElement5
-  );
-  togglePlusIcon(plusElement5);
-  console.log('click');
-});
+  const service = new ServiceHandler(headerElement, bodyElement, nameElement, plusElement);
+  services.push(service);
+}
+
+
+
 
 // Manejador del preloader
 const activatePreloader = () => {
@@ -232,7 +196,7 @@ const inputActive = (e, num) => {
   e.target === inputNameElement[`${num}`]
     ? inputNameElement[`${num}`].classList.add('inputBorderBottom')
     : inputNameElement[`${num}`].classList.remove('inputBorderBottom');
-  // e.target === inputNameElement[`${num}`] ? inputNameElement[`${num}`].classList.add('inputBorderBottom') : inputNameElement[`${num}`].classList.remove('inputBorderBottom');
+
 };
 
 document.addEventListener('click', (e) => {
