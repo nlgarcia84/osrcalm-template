@@ -264,12 +264,15 @@ formElement.addEventListener('submit', (e) => {
   }, 7000);
 });
 
+const handleSwitch = (circleElement, switchElement) => {
+  circleElement.classList.toggle('checkboxSItems__items--active');
+  switchElement.classList.toggle('checkboxSItems--active');
+};
+
 circle1Element.addEventListener('click', () => {
-  circle1Element.classList.toggle('checkboxSItems__items--active');
-  switch1Element.classList.toggle('checkboxSItems--active');
+  handleSwitch(circle1Element, switch1Element);
 });
 
 circle2Element.addEventListener('click', () => {
-  circle2Element.classList.toggle('checkboxSItems__items--active');
-  switch2Element.classList.toggle('checkboxSItems--active');
+  handleSwitch(circle2Element, switch2Element);
 });
