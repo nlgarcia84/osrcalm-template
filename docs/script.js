@@ -202,7 +202,6 @@ const inputActive = (e, num) => {
 document.addEventListener('click', (e) => {
   inputActive(e, 0);
   inputActive(e, 1);
-  inputActive(e, 2);
 });
 
 document.addEventListener('input', () => {
