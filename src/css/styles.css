@@ -584,7 +584,7 @@ body {
   justify-content: space-between;
   width: 100%;
   height: 120px;
-  padding: .8em;
+  padding: 0.8em;
   text-align: left;
 }
 
@@ -593,18 +593,23 @@ body {
   display: flex;
 }
 
-
 .acceptText {
   width: 100%;
   display: flex;
 }
 
 .checkboxSItems {
+  position: relative;
   width: 40px;
   background-color: #222222;
   border-radius: 15px;
   outline: 1px solid var(--submitButton-desactivated);
- margin: 4px 25px 0 5px;
+  margin: 4px 25px 0 5px;
+  transition: background-color 1s ease;
+}
+
+.checkboxSItems--active {
+  background-color: var(--secundary-color);
 }
 
 .checkboxSItems__items {
@@ -612,10 +617,15 @@ body {
   height: 16px;
   border-radius: 50%;
   background-color: var(--submitButton-desactivated);
+  transition: transform 500ms ease;
+}
+
+.checkboxSItems__items--active {
+  transform: translateX(25px);
 }
 
 .span-text {
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 18px;
   color: var(--submitButton-desactivated);
 }

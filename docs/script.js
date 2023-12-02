@@ -53,8 +53,10 @@ const nameElement = document.getElementById('name');
 const emailElement = document.getElementById('email');
 const messageElement = document.getElementById('message');
 const inputNameElement = document.querySelectorAll('.form-item');
-const check1Element = document.getElementById('check1');
-const check2Element = document.getElementById('check2');
+const switch1Element = document.getElementById('switch1');
+const switch2Element = document.getElementById('switch2');
+const circle1Element = document.getElementById('circle1');
+const circle2Element = document.getElementById('circle2');
 const checkboxesElement = document.querySelector('.checkbox');
 const submitButtonElement = document.querySelector('.form__submitButton');
 
@@ -179,12 +181,14 @@ for (let i = 1; i <= 5; i++) {
   const nameElement = document.getElementById(`allServices__name${i}`);
   const plusElement = document.getElementById(`plus-solid-${i}`);
 
-  const service = new ServiceHandler(headerElement, bodyElement, nameElement, plusElement);
+  const service = new ServiceHandler(
+    headerElement,
+    bodyElement,
+    nameElement,
+    plusElement
+  );
   services.push(service);
 }
-
-
-
 
 // Manejador del preloader
 const activatePreloader = () => {
@@ -196,7 +200,6 @@ const inputActive = (e, num) => {
   e.target === inputNameElement[`${num}`]
     ? inputNameElement[`${num}`].classList.add('inputBorderBottom')
     : inputNameElement[`${num}`].classList.remove('inputBorderBottom');
-
 };
 
 document.addEventListener('click', (e) => {
@@ -261,38 +264,12 @@ formElement.addEventListener('submit', (e) => {
   }, 7000);
 });
 
+circle1Element.addEventListener('click', () => {
+  circle1Element.classList.toggle('checkboxSItems__items--active');
+  switch1Element.classList.toggle('checkboxSItems--active');
+});
 
-class CuentaBancaria {
-  constructor(titular, saldo) {
-    this.titular = titular;
-    this.saldo = saldo;
-  }
-
-  mostrarInformacion() {
-    console.log(`Nombre: ${this.titular} Saldo: ${this.saldo}`);
-  }
-
-}
-const cuenta1 = new CuentaBancaria(`Juan`, 2000);
-cuenta1.mostrarInformacion();
-const cuenta2 = new CuentaBancaria(`Juan`, 2000);
-cuenta2.mostrarInformacion();
-
-class Book {
-  constructor(titulo, autor, paginas) {
-
-    this.titulo = titulo;
-    this.autor = autor;
-    this.paginas = paginas;
-  }
-
-  inf() {
-    console.log(`Titulo del libro: ${this.titulo}, Autor: ${this.autor}, Paginas: ${this.paginas}`);
-
-  }
-};
-
-const book1 = new Book('The kill', 'Marcos', 3000);
-book1.inf();
-const book2 = new Book('Soap', 'James', 300);
-book2.inf();
+circle2Element.addEventListener('click', () => {
+  circle2Element.classList.toggle('checkboxSItems__items--active');
+  switch2Element.classList.toggle('checkboxSItems--active');
+});
