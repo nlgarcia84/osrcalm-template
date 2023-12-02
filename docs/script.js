@@ -261,3 +261,39 @@ formElement.addEventListener('submit', (e) => {
     activatePreloader();
   }, 7000);
 });
+
+
+class CuentaBancaria {
+  constructor(titular, saldo) {
+    this.titular = titular;
+    this.saldo = saldo;
+  }
+
+  mostrarInformacion() {
+    console.log(`Nombre: ${this.titular} Saldo: ${this.saldo}`);
+  }
+
+}
+const cuenta1 = new CuentaBancaria(`Juan`, 2000);
+cuenta1.mostrarInformacion();
+const cuenta2 = new CuentaBancaria(`Juan`, 2000);
+cuenta2.mostrarInformacion();
+
+class Book {
+  constructor(titulo, autor, paginas) {
+
+    this.titulo = titulo;
+    this.autor = autor;
+    this.paginas = paginas;
+  }
+
+  inf() {
+    console.log(`Titulo del libro: ${this.titulo}, Autor: ${this.autor}, Paginas: ${this.paginas}`);
+
+  }
+};
+
+const book1 = new Book('The kill', 'Marcos', 3000);
+book1.inf();
+const book2 = new Book('Soap', 'James', 300);
+book2.inf();
