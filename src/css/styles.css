@@ -605,11 +605,12 @@ body {
   border-radius: 15px;
   outline: 1px solid var(--submitButton-desactivated);
   margin: 4px 25px 0 5px;
-  transition: background-color 1s ease;
+  transition: all 1s ease;
 }
 
 .checkboxSItems--active {
   background-color: var(--secundary-color);
+  box-shadow: 0 0 4px 0.2px var(--secundary-color);
 }
 
 .checkboxSItems__items {
