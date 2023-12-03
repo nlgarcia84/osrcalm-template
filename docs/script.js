@@ -253,10 +253,10 @@ formElement.addEventListener('submit', (e) => {
     nameElement.value = '';
     emailElement.value = '';
     messageElement.value = '';
-    handleSwitch(circle1Element, switch1Element);
-    handleSwitch(circle2Element, switch2Element);
     activatePreloader();
   }, 7000);
+  handleSwitch(circle1Element, switch1Element);
+  handleSwitch(circle2Element, switch2Element);
 });
 
 const handleSwitch = (circleElement, switchElement) => {
