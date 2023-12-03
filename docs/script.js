@@ -207,17 +207,17 @@ document.addEventListener('click', (e) => {
   inputActive(e, 1);
 });
 
-document.addEventListener('input', () => {
-  if (!nameElement.value || !emailElement.value || !messageElement.value) {
+document.addEventListener('click', (e) => {
+  if (
+    !nameElement.value ||
+    !emailElement.value ||
+    !messageElement.value ||
+    circle1Element.classList.length === 1 ||
+    circle2Element.classList.length === 1
+  ) {
     submitButtonElement.classList.remove('form__submitButton--activated');
   } else {
     submitButtonElement.classList.add('form__submitButton--activated');
-  }
-});
-
-document.addEventListener('input', () => {
-  if (circle1Element.offsetX === -14 && circle2Element.offsetX === -14) {
-    submitButtonElement.removeAttribute('disabled');
   }
 });
 
@@ -227,7 +227,13 @@ formElement.addEventListener('submit', (e) => {
   e.preventDefault();
   // Se comprueba si están los checkbox marcados
 
-  if (!nameElement.value || !emailElement.value || !messageElement.value) {
+  if (
+    !nameElement.value ||
+    !emailElement.value ||
+    !messageElement.value ||
+    circle1Element.classList.length === 1 ||
+    circle2Element.classList.length === 1
+  ) {
     submitButtonElement.setAttribute('disabled');
   } else {
     submitButtonElement.removeAttribute('disabled');
@@ -237,15 +243,18 @@ formElement.addEventListener('submit', (e) => {
   // Activación del preloader durante 1000ms
   setTimeout(activatePreloader, 1000);
   // Termina el preloader y aparece el mensaje
+
   setTimeout(() => {
     formContainer.classList.remove('form__container--desactivated');
     successMsgElement.textContent = 'Mensaje enviado con éxito';
     // Reseteo de los checkbox y el color del submit button
+
     submitButtonElement.classList.remove('form__submitButton--activated');
     nameElement.value = '';
     emailElement.value = '';
     messageElement.value = '';
-
+    handleSwitch(circle1Element, switch1Element);
+    handleSwitch(circle2Element, switch2Element);
     activatePreloader();
   }, 7000);
 });
@@ -256,10 +265,11 @@ const handleSwitch = (circleElement, switchElement) => {
 };
 
 circle1Element.addEventListener('click', (e) => {
-  console.dir(e);
+  console.dir(e.target.classList);
   handleSwitch(circle1Element, switch1Element);
 });
 
-circle2Element.addEventListener('click', () => {
+circle2Element.addEventListener('click', (e) => {
+  console.dir(e.target.classList);
   handleSwitch(circle2Element, switch2Element);
 });
