@@ -231,6 +231,7 @@ formElement.addEventListener('submit', (e) => {
     !nameElement.value ||
     !emailElement.value ||
     !messageElement.value ||
+    // Length === 2 es con el interruptor encendido
     circle1Element.classList.length === 1 ||
     circle2Element.classList.length === 1
   ) {
