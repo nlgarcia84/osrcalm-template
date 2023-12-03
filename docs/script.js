@@ -208,13 +208,7 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('input', () => {
-  if (
-    !check1Element.checked ||
-    !check2Element.checked ||
-    !nameElement.value ||
-    !emailElement.value ||
-    !messageElement.value
-  ) {
+  if (!nameElement.value || !emailElement.value || !messageElement.value) {
     submitButtonElement.classList.remove('form__submitButton--activated');
   } else {
     submitButtonElement.classList.add('form__submitButton--activated');
@@ -222,7 +216,7 @@ document.addEventListener('input', () => {
 });
 
 document.addEventListener('input', () => {
-  if (check1Element.checked && check2Element.checked2) {
+  if (circle1Element.offsetX === -14 && circle2Element.offsetX === -14) {
     submitButtonElement.removeAttribute('disabled');
   }
 });
@@ -233,13 +227,7 @@ formElement.addEventListener('submit', (e) => {
   e.preventDefault();
   // Se comprueba si están los checkbox marcados
 
-  if (
-    !nameElement.value ||
-    !emailElement.value ||
-    !messageElement.value ||
-    !check1Element.checked ||
-    !check2Element.checked
-  ) {
+  if (!nameElement.value || !emailElement.value || !messageElement.value) {
     submitButtonElement.setAttribute('disabled');
   } else {
     submitButtonElement.removeAttribute('disabled');
@@ -257,8 +245,6 @@ formElement.addEventListener('submit', (e) => {
     nameElement.value = '';
     emailElement.value = '';
     messageElement.value = '';
-    check1Element.checked = false;
-    check2Element.checked = false;
 
     activatePreloader();
   }, 7000);
@@ -269,7 +255,8 @@ const handleSwitch = (circleElement, switchElement) => {
   switchElement.classList.toggle('checkboxSItems--active');
 };
 
-circle1Element.addEventListener('click', () => {
+circle1Element.addEventListener('click', (e) => {
+  console.dir(e);
   handleSwitch(circle1Element, switch1Element);
 });
 

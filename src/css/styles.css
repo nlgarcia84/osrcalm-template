@@ -397,7 +397,7 @@ body {
 
 .allServices__header--active {
   background-color: var(--body-backgroundColor);
-  border-radius: 12px 12px 0 0;
+  /* border-radius: 12px 12px 0 0; */
   border-bottom: none;
 }
 
@@ -413,7 +413,8 @@ body {
 }
 
 .allServices__body {
-  background-color: var(--body-backgroundColor);
+  background-color: var(--text-color);
+  font-size: 1rem;
   margin-bottom: 0;
   padding: 0;
   top: 70px;
