@@ -664,6 +664,14 @@ body {
   color: var(--text-color);
 }
 
+.lopd {
+  font-weight: bold;
+  color: var(--paragraph-color);
+}
+
+.lopd-link {
+  text-decoration: none;
+}
 /* init preloader here */
 
 .windows8 {
