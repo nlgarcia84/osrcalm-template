@@ -181,6 +181,8 @@ body {
 .contactos {
   color: var(--text-color);
   width: 60px;
+  height: 60px;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   margin: 0 15px 0 0;
@@ -481,12 +483,17 @@ body {
 }
 
 .form__section {
-  padding: 5px;
+  padding: 20px 5px 5px 5px;
   text-align: center;
 }
 
 .successMsg {
   margin-bottom: 10px;
+  transition: all 3s ease;
+}
+
+.successMsg-faded {
+  opacity: 0;
 }
 
 .form__container {
@@ -695,6 +702,7 @@ body {
   width: 78px;
   height: 78px;
   margin: auto;
+  margin-top: 20px;
 }
 
 .window8--activated {
@@ -1058,6 +1066,8 @@ body {
   align-items: center;
 }
 
+/* Media Tablet */
+
 @media screen and (min-width: 768px) {
   .header__burger {
     display: none;
@@ -1084,12 +1094,20 @@ body {
     font-size: 0.8rem;
   }
 
+  a:link,
+  a:visited,
+  a:active {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
   .dropdown__menu {
     width: 100%;
     display: flex;
     justify-content: center;
     border: 1px solid greenyellow;
   }
+
   .main-image {
     height: 350px;
   }
@@ -1104,6 +1122,25 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .cardContainer {
+    display: flex;
+    background-color: #302f2f;
+    padding: 5px;
+    /* background-color: greenyellow; */
+  }
+
+  .card {
+    /* border: 1px solid greenyellow; */
+    width: 50%;
+    background-color: var(--main-color);
+    padding: 10px;
+    margin: 5px;
+    -webkit-box-shadow: 5px 8px 10px -7px rgba(112, 112, 112, 0.53);
+    -moz-box-shadow: 5px 8px 10px -7px rgba(112, 112, 112, 0.53);
+    box-shadow: 5px 8px 10px -7px rgba(10, 10, 10, 0.8);
+  }
+
   .allServices__paragraph {
     margin-bottom: 20px;
   }
@@ -1132,7 +1169,50 @@ body {
   }
 }
 
+/* Media Desktop */
 @media screen and (min-width: 1024px) {
+  .card {
+    padding: 3em;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    padding: 2.5em;
+  }
+  .header__logo {
+    width: 60px;
+    height: 60px;
+  }
+  .navbar {
+    width: 600px;
+  }
+  .navbar .navbar__item {
+    cursor: pointer;
+  }
+  .navbar .navbar__item:hover {
+    color: var(--secundary-color);
+  }
+
+  .contactos__item {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+  }
+
+  .fa-phone:hover {
+    width: 30px;
+    height: 30px;
+    color: rgb(7, 214, 76);
+  }
+  .fa-envelope:hover {
+    width: 30px;
+    height: 30px;
+    color: rgb(223, 223, 6);
+  }
   .main-image {
     height: 550px;
   }

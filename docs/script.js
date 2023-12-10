@@ -246,8 +246,12 @@ formElement.addEventListener('submit', (e) => {
   // Termina el preloader y aparece el mensaje
 
   setTimeout(() => {
-    formContainer.classList.remove('form__container--desactivated');
     successMsgElement.textContent = 'Mensaje enviado con éxito';
+    formContainer.classList.remove('form__container--desactivated');
+    setTimeout(() => {
+      successMsgElement.classList.add('successMsg-faded');
+    }, 5000);
+
     // Reseteo de los checkbox y el color del submit button
 
     submitButtonElement.classList.remove('form__submitButton--activated');

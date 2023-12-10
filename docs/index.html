@@ -9,8 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/src/css/styles.css" />
-    <!-- <link rel="stylesheet" href="css/styles.min.css" /> -->
+    <!-- <link rel="stylesheet" href="/src/css/styles.css" /> -->
+    <link rel="stylesheet" href="css/styles.min.css" />
     <script
       src="https://kit.fontawesome.com/eac43127e7.js"
       crossorigin="anonymous"
@@ -44,16 +44,24 @@
       </div>
       <nav class="navbar_container">
         <ul class="navbar">
-          <li>QUIENES SOMOS</li>
-          <li>SERVICIOS</li>
-          <li>CONTACTO</li>
+          <li class="navbar__item">
+            <a href="#quienesSomos">QUIENES SOMOS</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#allServices__title">SERVICIOS</a>
+          </li>
+          <li class="navbar__item"><a href="#contacto">CONTACTO</a></li>
         </ul>
       </nav>
       <div class="contactos">
-        <a href="tel:670349654"><i class="fa-solid fa-phone"></i></a>
-        <a href="mailto:info@osrcalm.com">
-          <i class="fa-solid fa-envelope"></i
-        ></a>
+        <div class="contactos__item">
+          <a href="tel:670349654"><i class="fa-solid fa-phone"></i></a>
+        </div>
+        <div class="contactos__item">
+          <a href="mailto:info@osrcalm.com">
+            <i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
       </div>
       <div id="empty" class="empty"></div>
       <div class="closeMenu" id="closeMenu">
@@ -72,36 +80,39 @@
         </h1>
         <!-- <a href="#" class="cta-button">contáctanos</a> -->
       </div>
-      <section class="aboutUs section-styles">
-        <h2 class="aboutUs__title title-style" id="quienesSomos">
-          ¿Quienes somos?
-        </h2>
-        <div class="groundborder"></div>
-        <article class="aboutUs__article">
-          <p class="aboutUs__paragraph paragraph-styles">
-            Somos una empresa con años de experiencia en el sector ubicada en
-            Barcelona. Nos dedicamos a todo tipo de servicios generales
-            enfocados a Comunidades de Vecinos, Mancomunidades de Propietarios,
-            Garajes y Aparcamientos tanto públicos como privados, Edificios
-            Singulares, etc.
-          </p>
-        </article>
-      </section>
-      <section class="servicesDescription section-styles">
-        <h2 class="servicesDescription__title title-style" id="comoLoHacemos">
-          ¿Cómo lo hacemos?
-        </h2>
-        <div class="groundborder"></div>
-        <div>
-          <p class="servicesDescription__paragraph paragraph-styles">
-            <span class="servicesDescription__paragraph--osr">OSR CALM</span>
-            elabora un plan operativo individualizado, para prestar un servicio
-            profesional adaptado a las necesidades de cada cliente. Combinamos
-            los medios técnicos y humanos adecuados, definiendo unas normas
-            básicas para la realización de cada servicio.
-          </p>
-        </div>
-      </section>
+      <div class="cardContainer">
+        <section class="aboutUs section-styles card">
+          <h2 class="aboutUs__title title-style" id="quienesSomos">
+            ¿Quienes somos?
+          </h2>
+          <div class="groundborder"></div>
+          <article class="aboutUs__article">
+            <p class="aboutUs__paragraph paragraph-styles">
+              Somos una empresa con años de experiencia en el sector ubicada en
+              Barcelona. Nos dedicamos a todo tipo de servicios generales
+              enfocados a Comunidades de Vecinos, Mancomunidades de
+              Propietarios, Garajes y Aparcamientos tanto públicos como
+              privados, Edificios Singulares, etc.
+            </p>
+          </article>
+        </section>
+        <section class="servicesDescription section-styles card">
+          <h2 class="servicesDescription__title title-style" id="comoLoHacemos">
+            ¿Cómo lo hacemos?
+          </h2>
+          <div class="groundborder"></div>
+          <div>
+            <p class="servicesDescription__paragraph paragraph-styles">
+              <span class="servicesDescription__paragraph--osr">OSR CALM</span>
+              elabora un plan operativo individualizado, para prestar un
+              servicio profesional adaptado a las necesidades de cada cliente.
+              Combinamos los medios técnicos y humanos adecuados, definiendo
+              unas normas básicas para la realización de cada servicio.
+            </p>
+          </div>
+        </section>
+      </div>
+
       <section class="allServices section-styles" id="allServices">
         <h2 class="allServices__title title-style" id="allServices__title">
           Nuestros servicios
