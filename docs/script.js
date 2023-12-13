@@ -57,7 +57,7 @@ const switch1Element = document.getElementById('switch1');
 const switch2Element = document.getElementById('switch2');
 const circle1Element = document.getElementById('circle1');
 const circle2Element = document.getElementById('circle2');
-const checkboxesElement = document.querySelector('.checkbox');
+const checkboxesElement = document.querySelector('.checkboxConteiner');
 const submitButtonElement = document.querySelector('.form__submitButton');
 
 // BURGER MENU
