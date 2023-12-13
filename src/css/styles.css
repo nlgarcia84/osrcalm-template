@@ -676,6 +676,7 @@ body {
 
 .lopd-link {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 .main-lopd {
